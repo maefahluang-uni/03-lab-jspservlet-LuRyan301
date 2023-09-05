@@ -69,4 +69,19 @@ public class TestBMICalculatorIT {
         }
     }
 
+    @Test
+    public void testCalculate3(){
+
+        try (Response response = client.target(WEB_URI+"?weight=30&height=1.5").request().get()) {
+            int responseCode = response.getStatus();
+            assertEquals(200, responseCode);
+
+            String jsonResponse = response.readEntity(String.class);
+            assertThat(jsonResponse, CoreMatchers.containsString("Result is 13"));
+
+            assertThat(jsonResponse, CoreMatchers.containsString("underweight"));
+            _logger.info("IT1 test passed");
+        }
+    }
+
 }
