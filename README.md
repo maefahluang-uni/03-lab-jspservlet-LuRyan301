@@ -29,7 +29,7 @@ You may study `testCaclulate1` as a sample. This test case should make a connect
 
 What benefit do we have from having integration tests in our project?
 ```
-Your though here
+We can know the code is running properly and can test the output result is right. 
 ```
 
 
